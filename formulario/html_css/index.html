@@ -9,17 +9,68 @@
 </head>
 <body>
     <h1>
-        Formulario
+        Formulario de edicion y vista de elementos del listado
     </h1>
     <form action="">
-        <label for="nombre ">Nombre</label>
-        <input type="text" placeholder="Nombre" required>
-        <label for="email" > Correo</label>
-        <input type="email" placeholder="Correo" required>
-        <label for="password">Contraseña</label>
-        <input type="password" placeholder="Contraseña" required>
-        <br>
-        <input type="submit" value="Enviar">
+        <div>
+        <label for="comidas">Comidas</label>        
+        <select name="comidas" id="comidas" onchange=selectElement()>
+            <option value="vacio" id= "opcionvacio"> </option>
+            <option value="pizza">Pizza</option>
+            <option value="hamburguesa">Hamburguesa</option>
+            <option value="asado">Asado</option>
+        </select>
+        </div>
+        <div class="hidden" id ="descripcionpizza">
+            <p>La pizza es un plato hecho con una masa plana, habitualmente circular, elaborada con harina de trigo, levadura, agua y sal
+               que tradicionalmente se cubre con salsa de tomate y mozzarella y se hornea a temperatura alta en un horno de leña.​​​</p>
+        </div>
+        <div class="hidden" id ="descripcionhamburguesa">
+            <p id="pHamburguesa">Una hamburguesa es un emparedado que contiene carne picada o de origen vegetal, ​ aglutinada en forma de filete cocinado a la parrilla o a la plancha, aunque：
+               puede freírse u hornearse.​</p>
+        </div>
+        <div class="hidden" id ="descripcionasado">
+            <p>El asado, barbacoa, parrilla o parrillada es una técnica de cocción mediante la cual los alimentos son expsesos al calor de fuego o brasas para que se cocinen lentamente.          
+            </p>
+        </div>
+        <div>
+            <input type="button" value="Editar" id="botonEditar" class="botonEditar hidden" onclick=Editar()>
+        </div>
     </form>
+
 </body>
+
+
+
+<script> 
+function selectElement () {
+    document.getElementById("botonEditar").classList.remove("hidden");
+    document.getElementById("opcionvacio").disabled = true;
+    if(document.getElementById("comidas").value == "pizza"){
+        document.getElementById("descripcionpizza").classList.remove("hidden");
+        document.getElementById("descripcionhamburguesa").classList.add("hidden");
+        document.getElementById("descripcionasado").classList.add("hidden");
+    }
+    if(document.getElementById("comidas").value == "hamburguesa"){
+        document.getElementById("descripcionpizza").classList.add("hidden");
+        document.getElementById("descripcionhamburguesa").classList.remove("hidden");
+        document.getElementById("descripcionasado").classList.add("hidden");
+    }
+    if(document.getElementById("comidas").value == "asado"){
+        document.getElementById("descripcionpizza").classList.add("hidden");
+        document.getElementById("descripcionhamburguesa").classList.add("hidden");
+        document.getElementById("descripcionasado").classList.remove("hidden");
+    }
+}
+</script>
+
+<script>
+    function Editar () {
+        document.getElementById("botonEditar").classList.remove("hidden");
+        if(document.getElementById("comidas").value == "hamburguesa")
+            console.log("hamburguesa");
+    }
+    
+    </script>
+
 </html>

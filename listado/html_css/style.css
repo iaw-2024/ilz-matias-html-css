@@ -1,0 +1,56 @@
+body{
+    background-image: url("/images/pizza.jpg");
+}
+h1{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    width: 10vh;
+    margin: 3vh 45vw;
+    color:rgb(0, 0, 0);
+    background-color: grey; 
+    padding: 10px;
+    content: center;
+}
+
+ol{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 10px;
+    background-color: grey;
+
+}
+div[id="2"]{
+    text-align: center;
+}
+p[id="comidas"]{
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+li{
+    background-color: rgba(177, 141, 255, 0.7);    
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+h2{
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+p{
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+}
+@media (max-width: 768px) {
+    form{
+        width: 70%;
+    }
+}
+
